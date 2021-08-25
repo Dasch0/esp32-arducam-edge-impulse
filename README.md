@@ -18,19 +18,21 @@ This project is intended to work within the Arduino framework using PlatformIO. 
 Before running this project, the ArduCAM must be connected to the ESP32 dev kit. To do this:
 
 1. Review the pin-out diagram for your specific ESP32 dev kit. There are multiple kit variations for ESP32. For instance for the 30-pin 'DOIT DEVIT V1 ESP32-WROOM-32', the pinout is shown below:
-![https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/08/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs-Copy.png?w=966&quality=100&strip=all&ssl=1]
+![RNT ESP32 Pinout](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/08/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs-Copy.png?w=966&quality=100&strip=all&ssl=1)
 
 2. Using the jumper wires, connect the following pins on the ESP32 kit to the ArduCAM in the order they appear. Ensure that the ESP32 is not powered during this
 
-ESP32  - ArduCAM - Description
-Pin 5  -  CS     - Chip Select for SPI
-Pin 23 -  MOSI   - SPI MOSI
-Pin 19 -  MISO   - SPI MISO
-Pin 18 -  SCK    - SPI Clock
-Pin 21 -  SDA    - I2C Data
-Pin 22 -  SCL    - I2C Clock
-GND    -  GND    - Common ground
-VCC    -  VCC    - 5V connection, pin may be labelled '5V' on some ESP32 kits
+|ESP32 |ArduCAM|Description        |
+|:-----|:------|:------------------|
+|Pin 5 | CS    |Chip Select for SPI|
+|Pin 23| MOSI  |SPI MOSI           |
+|Pin 19| MISO  |SPI MISO           |
+|Pin 18| SCK   |SPI Clock          |
+|Pin 21| SDA   |I2C Data           |
+|Pin 22| SCL   |I2C Clock          |
+|GND   | GND   |Common ground      |
+|VCC   | VCC   |5V connection pin  | 
+Note: VCC may be labelled '5V' on some ESP32 kits
 
 3. Double check that the pin connections are correct, and then connect the ESP32 to your computer via the ESP32's micro-USB port. We will verify that the hardware is connected correctly when testing out the firmware
 
