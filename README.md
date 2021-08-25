@@ -32,6 +32,7 @@ Before running this project, the ArduCAM must be connected to the ESP32 dev kit.
 |Pin 22| SCL   |I2C Clock          |
 |GND   | GND   |Common ground      |
 |VCC   | VCC   |5V connection pin  | 
+
 Note: VCC may be labelled '5V' on some ESP32 kits
 
 3. Double check that the pin connections are correct, and then connect the ESP32 to your computer via the ESP32's micro-USB port. We will verify that the hardware is connected correctly when testing out the firmware
