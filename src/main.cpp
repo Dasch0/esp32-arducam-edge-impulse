@@ -241,7 +241,7 @@ int cutout_get_data(size_t offset, size_t length, float *out_ptr) {
 void setup()
 {
   // Set up the serial connection for printing to terminal
-  Serial.begin(921600);
+  Serial.begin(115200);
   Serial.println("Serial Interface Initialized."); 
 
   arducam_init();
