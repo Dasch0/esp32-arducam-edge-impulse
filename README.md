@@ -77,7 +77,7 @@ Predictions (DSP: 4 ms., Classification: 1999 ms., Anomaly: 0 ms.):
     person: 0.04688
 ```
 
-The default loaded model is a simple classifer that classifies if a person is present in the captured image. The captured image is at 96x96 resolution, and the pre-loaded network is calibrated such that values >0.4 indicate a person is likely present.
+The default loaded model is a simple classifer that classifies if a person is present in the captured image. The captured image is at 96x96 resolution, and the pre-loaded network is designed such that values >0.5 indicate a person is likely present.
 
 ## Adding your own model
 It is very straightfoward to replace the pre-loaded model with other edge-impulse projects. Head over to your Edge Impulse project (created in one of the tutorials linked above), and go to Deployment. From here you can create the full library which contains the impulse and all external required libraries. Select Arduino library and click Build to create the library. Then download the .zip file, and place it in the `./lib/` directory of this repository.
