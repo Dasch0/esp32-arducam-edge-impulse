@@ -97,3 +97,23 @@ Next, open `src/main.cpp` and on **line 2**, change the top level edge-impulse l
 If you aren't sure what the header name for your project would be, peek inside the .zip file library and copy the name of the single header file in the root directory.
 
 ## FAQ
+
+### How can I build this with the Arduino IDE/CLI?
+While not tested, this project should work with Arduino tools. All you should need to do is:
+1. Add [ESP32 board support for Arduino](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/)
+2. Copy the code from src/main.cpp into a new .ino sketch
+3. Copy the ArduCAM library into your Arduino IDE's library folder (e.g `~/Documents/Arduino/libraries`)
+4. Add the exported Edge Impulse Arduino library via `Sketch->Include Library->Add .ZIP Library` from the IDE, or unzip it into the same library folder from step 3.
+
+### My SPI or I2C interface is failing to initialize!
+This is most likely from a faulty hardware connection, but could point to a malfunctioning ESP32 or Arducam board. To test for this, again triple check your hardware connections and note that depending on the specific flavor of ESP32 dev kit you are using, the pinout might be different from the example shown above. 
+
+If the SPI interface is failing, try to connect the ESP32 MOSI and MISO pins to each other and verify that this 'loopback' correctly sends data back to the ESP32. Also check that the CS pin (pin 5 by default in this project) is toggling correctly and a clock output is present on the SCK pin.
+
+If the I2C interface is failing, check the values returned by the I2C read. This tries to fetch the Arducam's VID and PID, and if they don't match the expected value you might be working with a different Arducam board other than the Mini 2MP Plus.
+
+### The person detection model isn't performing well!
+This is most likely due to the low resolution of the model input. The ArduCAM is taking 120x160 pixel photos, but only a center cropped 96x96 region is input into the neural network (as that was the resolution the model was trained on). This means you may need to stand further away from the camera for it to actually capture a full person in frame, and the low resolution may cause it to have trouble recognizing users in certain environments.
+
+### Why does the firmware capture a JPEG from the ArduCAM, then convert to raw pixels?
+The Arducam board can output raw pixel data, but it has some [known quirks](https://www.arducam.com/rgb565-format-issues/) that can make it challenging to accurately capture the raw pixels off of the camera directly. To work around this we use JPEG output which reliably encodes the color info, and then convert it to raw pixels using the excellent [JPEGDecoder](https://github.com/Bodmer/JPEGDecoder) library.
