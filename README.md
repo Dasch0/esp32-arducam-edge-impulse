@@ -3,7 +3,7 @@
 ## Overview
 This project runs an Edge Impulse designed image classification impulse on an ESP32 dev kit. These images are captured using a connected ArduCAM Mini 2MP Plus camera board.
 
-This project is intended to work within the Arduino framework using PlatformIO. It is also compatible with the Arduino IDE. If you would like to use the Arduino IDE/CLI to build this project, See the FAQ[#faq] section for more information.
+This project is intended to work within the Arduino framework using PlatformIO. It is also compatible with the Arduino IDE. If you would like to use the Arduino IDE/CLI to build this project, See the [FAQ](#faq) section for more information.
 
 ## Prerequisites
 - You have an ESP32 dev kit
