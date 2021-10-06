@@ -83,7 +83,7 @@ void arducam_spi_init() {
 void arducam_init() {
     arducam_spi_init();
     arducam_i2c_init();
-    // set to RAW format. This will provide a 320x240 little endian RGB565 pixel array
+    // set to JPEG format, this works around issues with the color data when sampling in RAW formats
     myCAM.set_format(JPEG);
     myCAM.InitCAM();
     // Specify the smallest possible resolution
