@@ -5,8 +5,8 @@
 #include <SPI.h>
 
 // raw frame buffer from the camera
-#define FRAME_BUFFER_COLS           96 
-#define FRAME_BUFFER_ROWS           96 
+#define FRAME_BUFFER_COLS           160 
+#define FRAME_BUFFER_ROWS           120 
 
 // size of the cutout to feed to Edge Impulse
 #define CUTOUT_COLS                 EI_CLASSIFIER_INPUT_WIDTH
