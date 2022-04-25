@@ -1,5 +1,7 @@
 # ESP32 + Arducam Mini 2MP Plus Edge Impulse Example
 
+__NOTE:__ This repository is a one-off example with inferencing only, and does not make use of ESP32 hardware optimizations. The ESP32 is now fully supported by Edge Impulse - with optimizations, examples, and tutorials for the ESP32-CAM board included. It is recommended to follow [docs.edgeimpulse.com](https://docs.edgeimpulse.com/docs/development-boards/fully-supported-development-boards) instead of this repository, and only continue here if you specifically need to interface the `Arducam Mini 2MP Plus` with your ESP32 kit.
+
 ## Overview
 This project runs an Edge Impulse designed image classification impulse on an ESP32 dev kit. These images are captured using a connected ArduCAM Mini 2MP Plus camera board.
 
